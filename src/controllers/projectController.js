@@ -6,6 +6,8 @@ const router = express.Router()
 router.use(authMiddleware)
 
 router.get('/', (req, res) => {
+    console.log("ususario " + req.session.token)
+    console.log("ususaria " + res.locals.user)
     res.send({ok: true})
 })
 

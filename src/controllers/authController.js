@@ -51,12 +51,15 @@ router.post('/authenticate', async (req, res) => {
         return res.status(400).send({ error: 'Invalid password'} )
 
     user.password = undefined
-
-    //return res.render('login')
-    return res.send({
-        user,
-        token: generateToken({ id: user.id })
-    })
+    req.flash("success_msg", "caralho")
+    let token = generateToken({ id: user.id })
+    req.session.use = 'Bearer ' + token
+    
+    return res.redirect('/projects')
+    //return res.send({
+        //user,
+        //token: generateToken({ id: user.id })
+    //})
 })
 
 module.exports = app => app.use('/auth', router)

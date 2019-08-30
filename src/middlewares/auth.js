@@ -1,8 +1,12 @@
+const express = require('express')
 const jwt = require('jsonwebtoken')
 const authConfig = require('../config/auth.json')
 
 module.exports = (req, res, next) => {
-    const authHeader = req.headers.authorization
+    let tt = req.session.use
+    console.log("poooorrraaa" + tt)
+    const authHeader = tt
+    console.log("fudeu" + authHeader)
 
     if (!authHeader)
         return res.status(401).send({error: 'No token provided'})
