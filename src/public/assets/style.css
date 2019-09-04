@@ -3,11 +3,7 @@
     margin:0;
     padding:0;
     font-family: Arial,sans-serif;
-  }
-  
-  body{
-    margin:10px;
-  }
+  }  
   
   a{
     text-decoration: none;
@@ -27,8 +23,8 @@
   
   /* formatando o cabeçalho dos formulários */
   h1{
-    font-size: 48px;
-    color: #066a75;
+    font-size: 22px;
+    color: #a1a3b5;
     padding: 10px 0;
     font-family: Arial,sans-serif;
     font-weight: bold;
@@ -46,13 +42,13 @@
   }
   
   p{
-    margin-bottom:15px;
+    margin-bottom:5px;
   }
   p:first-child{
     margin: 0px;
   }
   label{
-    color: #405c60;
+    color: #a1a3b5;
     position: relative;
   }
   
@@ -89,9 +85,9 @@
   
   /*estilo do botão submit */
   input[type="submit"]{
-    width: 100%!important;
+    width: 95%!important;
     cursor: pointer;  
-    background: #3d9db3;
+    background: #b3a3c1;
     padding: 8px 5px;
     color: #fff;
     font-size: 20px;  
@@ -111,11 +107,11 @@
   /*marcando os links para mudar de um formulário para outro */
   .link{
     position: absolute;
-    background: #e1eaeb;
-    color: #7f7c7c;
+    background: #221942;
+    color: #d6c4c4;
     left: 0px;
     height: 20px;
-    width: 440px;
+    width: 438px;
     padding: 17px 30px 20px 30px;
     font-size: 16px;
     text-align: right;
@@ -128,12 +124,12 @@
     font-weight: bold;
     background: #f7f8f1;
     padding: 6px;
-    color: rgb(29, 162, 193);
+    color: #d29f9f;
     margin-left: 10px;
     border: 1px solid #cbd518;
   
     -webkit-border-radius: 4px;
-    border-radius: 4px;  
+    border-radius: 12px;  
   
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s  linear;
@@ -150,9 +146,9 @@
     position: absolute;
     top: 0px;
     width: 88%;   
-    padding: 18px 6% 60px 6%;
+    padding: 18px 3% 60px 6%;
     margin: 0 0 35px 0;
-    background: rgb(247, 247, 247);
+    background: #3c2c5d;
     border: 1px solid rgba(147, 184, 189,0.8);
     
     -webkit-box-shadow: 5px;

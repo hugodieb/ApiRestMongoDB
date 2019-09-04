@@ -1,0 +1,12 @@
+.bd-navbar {
+    background-color: #563d7c;
+}
+.bd-navbar .navbar-brand {
+    color: #dec8c8e6;
+}
+.bd-navbar .navbar-brand:hover {
+    color: #dec8c8e6;
+}
+.bd-navbar .navbar-nav .nav-item .nav-link {
+    color: #dec8c8e6;
+}

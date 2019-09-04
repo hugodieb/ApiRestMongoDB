@@ -34,13 +34,12 @@ router.post('/register', async (req, res) => {
     }
 })
 
-router.get('/authenticate', async (req, res) => {
-    res.render('login')
+router.get('/login', async (req, res) => {
+    res.render('pages/login')
 })
 
 router.post('/authenticate', async (req, res) => {
-    const {email, password} = req.body
-    console.log(req.body)
+    const {email, password} = req.body    
 
     const user = await User.findOne({ email }).select('+password')
 
@@ -53,13 +52,27 @@ router.post('/authenticate', async (req, res) => {
     user.password = undefined
     req.flash("success_msg", "caralho")
     let token = generateToken({ id: user.id })
-    req.session.use = 'Bearer ' + token
+    req.session.token = 'Bearer ' + token    
+    req.session.user = {name: user.name, email: user.email}
     
     return res.redirect('/projects')
     //return res.send({
         //user,
         //token: generateToken({ id: user.id })
     //})
+})
+
+router.get('/logout', async (req, res) => {
+    if (req.session) {
+        // delete session object
+        req.session.destroy(function(err) {
+          if(err) {
+            return next(err);
+          } else {
+            return res.redirect('/')
+          }
+        })
+      }
 })
 
 module.exports = app => app.use('/auth', router)
